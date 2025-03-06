@@ -1,0 +1,172 @@
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  font-family: delightPurple;
+  font-size: 32px;
+  padding-right: 60px;
+}
+
+@font-face {
+  font-family: delightPurple;
+  src: url(/Delight\ Purple.otf);
+}
+
+.gameboard-container {
+  justify-self: start;
+  grid-column: 2;
+  width: 600px;
+  height: 600px;
+  display: flex;
+}
+
+.stats-container {
+  grid-column: 1;
+  border-radius: 5%;
+  padding: 100px;
+  font-size: 2rem;
+  justify-self: end;
+  margin-bottom: 0;
+}
+
+.stats-container h1 {
+  text-align: center;
+}
+
+.player-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.player-info {
+  margin: 20px;
+}
+
+.player-turn {
+  margin-top: 1em;
+  text-decoration: underline;
+}
+
+.gameboard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  outline: 5px solid white;
+  outline-offset: -5px;
+}
+
+.cell {
+  box-sizing: border-box;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.x {
+  stroke-dasharray: 350;
+  stroke-dashoffset: -350;
+  color: blue;
+}
+
+.o {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  color: red;
+}
+
+svg {
+  pointer-events: none;
+}
+
+.x,
+.o {
+  animation: draw 0.5s ease-in forwards;
+}
+
+.xIcon {
+  width: 100%;
+}
+
+.oIcon {
+  width: 90%;
+}
+
+.message-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+}
+
+.message-container-animation {
+  animation: message-container-fade 2s ease-in;
+}
+
+.message-stripe {
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  font-family: delightPurple;
+  font-size: 32px;
+}
+
+.message {
+  position: relative;
+  right: -100%;
+}
+.message-animation {
+  animation: message-movement 2s;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes message-container-fade {
+  20% {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  90% {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes message-movement {
+  0% {
+    right: -100%;
+  }
+  30% {
+    right: 0;
+  }
+  50% {
+    right: 0;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.copyright {
+  font-size: 1rem;
+  text-align: center;
+}
