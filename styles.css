@@ -11,7 +11,7 @@ body {
 
 @font-face {
   font-family: delightPurple;
-  src: url(/Delight\ Purple.otf);
+  src: url(fonts/DelightPurple.otf);
 }
 
 .gameboard-container {
