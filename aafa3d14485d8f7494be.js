@@ -1,3 +1,5 @@
+import "./styles.css";
+
 const gameboardFunction = (function () {
   let playerOne = {
     positions: [],
